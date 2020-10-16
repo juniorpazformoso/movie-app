@@ -1,13 +1,15 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 
 import './styles/styles.scss';
-import MovieList from './components/MoviesList/movie-list';
+import MovieList from './components/MoviesList';
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <MovieList />
-    </div>
+    </Provider>
   );
 }
 
