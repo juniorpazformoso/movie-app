@@ -3,42 +3,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CardMovie from './CardMovie';
 
-function MovieList() {
-  return (
-    <div className="card-grid">
-      <CardMovie
-        url={
-          'https://www.joblo.com/assets/images/joblo/posters/2019/02/detective-pikachu-trailer-poster-main.jpg'
-        }
-      />
-      <CardMovie
-        url={
-          'https://www.joblo.com/assets/images/joblo/posters/2019/01/Alita-character-poster-1.jpg'
-        }
-      />
-      <CardMovie
-        url={'https://www.joblo.com/assets/images/joblo/posters/2018/11/Spider-Verse-poster-1.jpg'}
-      />
-      <CardMovie
-        url={'https://www.joblo.com/assets/images/joblo/posters/2018/11/Spider-Verse-poster-1.jpg'}
-      />
-      <CardMovie
-        url={
-          'https://www.joblo.com/assets/images/joblo/posters/2019/02/detective-pikachu-trailer-poster-main.jpg'
-        }
-      />
-      <CardMovie
-        url={
-          'https://www.joblo.com/assets/images/joblo/posters/2019/02/detective-pikachu-trailer-poster-main.jpg'
-        }
-      />
-      <CardMovie
-        url={
-          'https://www.joblo.com/assets/images/joblo/posters/2019/02/detective-pikachu-trailer-poster-main.jpg'
-        }
-      />
-    </div>
-  );
+function MovieList({ movies }) {
+  const moviesMarkup = movies.map(movie => {
+    return <CardMovie movie={movie} key={movie.id} />;
+  });
+
+  return <div className="card-grid">{moviesMarkup}</div>;
 }
 
 const mapStateToProps = state => {
