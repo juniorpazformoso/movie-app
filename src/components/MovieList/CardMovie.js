@@ -6,9 +6,8 @@ function CardMovie(props) {
   const { url } = props;
 
   return (
-    <Card className="movie_card">
+    <Card className="movie-card">
       <Card.Img src={url} />
-      <Card.Body>Titulito</Card.Body>
     </Card>
   );
 }
