@@ -3,12 +3,12 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import './styles/styles.scss';
-import MovieList from './components/MovieList';
+import PopularMovies from './pages/PopularMovies'
 
 function App() {
   return (
     <Provider store={store}>
-      <MovieList />
+      <PopularMovies />
     </Provider>
   );
 }
