@@ -1,7 +1,7 @@
 import React from 'react';
-// import { Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import CardMovie from './CardMovie';
+import PropTypes from 'prop-types';
 
 function MovieList({ movies }) {
   const moviesMarkup = movies.map(movie => {
@@ -15,6 +15,10 @@ const mapStateToProps = state => {
   return {
     movies: state.moviesState.movies
   };
+};
+
+MovieList.propTypes = {
+  movies: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps)(MovieList);

@@ -2,9 +2,8 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-function CardMovie({movie}) {
-
-  const urlPoster = `https://image.tmdb.org/t/p/w780${movie.poster_path}`
+function CardMovie({ movie }) {
+  const urlPoster = `https://image.tmdb.org/t/p/w780${movie.poster_path}`;
 
   return (
     <Card className="movie-card">
@@ -14,7 +13,7 @@ function CardMovie({movie}) {
 }
 
 CardMovie.propTypes = {
-  url: PropTypes.string
+  movie: PropTypes.object.isRequired
 };
 
 export default CardMovie;
